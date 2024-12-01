@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expressions_1
+namespace Expressions_2
 {
     internal class Expressions_2
     {
