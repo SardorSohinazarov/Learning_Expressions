@@ -27,28 +27,28 @@ namespace Expressions_6
             new Person { FirstName = "Xudoyor", LastName = "Isoqjonov", Age = 24 },
         };
 
-        public static void Main()
-        {
-            var propertyNames = new List<string> { "FirstName", "LastName"};
+        //public static void Main()
+        //{
+        //    var propertyNames = new List<string> { "FirstName", "LastName"};
 
-            var key = Console.ReadLine();
+        //    var key = Console.ReadLine();
 
-            var parametr = Expression.Parameter(typeof(Person), "p");
+        //    var parametr = Expression.Parameter(typeof(Person), "p");
 
-            var properties = propertyNames
-                .Select(x => Expression.Property(parametr, x))
-                .ToList();
+        //    var properties = propertyNames
+        //        .Select(x => Expression.Property(parametr, x))
+        //        .ToList();
 
-            var conditions = properties.Select(x =>
-                Expression.Equal(x, Expression.Constant(key))).ToList();
+        //    var conditions = properties.Select(x =>
+        //        Expression.Equal(x, Expression.Constant(key))).ToList();
 
-            var body = conditions.Aggregate((x, y) => Expression.OrElse(x, y));
-            Console.WriteLine(body);
-            var lambda = Expression.Lambda<Func<Person, bool>>(body, parametr);
-            var filtered = persons.Where(lambda.Compile());
+        //    var body = conditions.Aggregate((x, y) => Expression.OrElse(x, y));
+        //    Console.WriteLine(body);
+        //    var lambda = Expression.Lambda<Func<Person, bool>>(body, parametr);
+        //    var filtered = persons.Where(lambda.Compile());
 
-            Console.WriteLine(JsonSerializer.Serialize(filtered, options: new JsonSerializerOptions() { WriteIndented = true }));
-        }
+        //    Console.WriteLine(JsonSerializer.Serialize(filtered, options: new JsonSerializerOptions() { WriteIndented = true }));
+        //}
     }
 
     public class Person
