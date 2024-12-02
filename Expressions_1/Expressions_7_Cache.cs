@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Expressions_7
 {
+    /// <summary>
+    /// 
+    /// </summary>
     internal class Expressions_7_Cache
     {
         private static readonly ConcurrentDictionary<string, Func<Person, bool>> cachedExpressions = new ConcurrentDictionary<string, Func<Person, bool>>();
@@ -25,17 +28,17 @@ namespace Expressions_7
             new Person { FirstName = "Xudoyor", LastName = "Isoqjonov", Age = 24 },
         };
 
-        public static void Main()
-        {
-            string expressionCacheKey = "AgeGreaterThan18";
-            Func<Person, bool> compiledExpression = GetOrCreate(expressionCacheKey);
-            Func<Person, bool> compiledExpression2 = GetOrCreate(expressionCacheKey);
+        //public static void Main()
+        //{
+        //    string expressionCacheKey = "AgeGreaterThan18";
+        //    Func<Person, bool> compiledExpression = GetOrCreate(expressionCacheKey);
+        //    Func<Person, bool> compiledExpression2 = GetOrCreate(expressionCacheKey);
 
-            var person = new Person { FirstName = "Ali", LastName = "Zoirov", Age = 20 };
-            bool isAdult = compiledExpression(person);
+        //    var person = new Person { FirstName = "Ali", LastName = "Zoirov", Age = 20 };
+        //    bool isAdult = compiledExpression(person);
 
-            Console.WriteLine($"{person.FirstName} katta yoshli: {isAdult}");
-        }
+        //    Console.WriteLine($"{person.FirstName} katta yoshli: {isAdult}");
+        //}
 
         private static Func<Person, bool> GetOrCreate(string expressionCacheKey)
         {
