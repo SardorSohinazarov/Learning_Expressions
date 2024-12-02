@@ -7,7 +7,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Expressions_1
+namespace Expressions_8
 {
     /// <summary>
     /// Generic mapper class
@@ -113,20 +113,20 @@ namespace Expressions_1
     //Bu yondashuv performance muhim bo‘lgan real-time yoki katta tizimlarda yaxshi natija beradi.
     internal class Expressions_8_Mapping
     {
-        public static void Main()
-        {
-            Student student = new Student { Id = 1, FirstName = "John", LastName = "Doe", Age = 25, School = "Harvard" };
+        //public static void Main()
+        //{
+        //    Student student = new Student { Id = 1, FirstName = "John", LastName = "Doe", Age = 25, School = "Harvard" };
 
-            var mapFunction = Mapper.CreateMapFunction<Student, Person>();
-            Person person = mapFunction(student);
+        //    var mapFunction = Mapper.CreateMapFunction<Student, Person>();
+        //    Person person = mapFunction(student);
 
-            Console.WriteLine($"Student:" +
-                $" {person.FirstName}" +
-                $" {person.LastName}" +
-                $" {person.Age}"
-                // +$" {person.School}"
-                );
-        }
+        //    Console.WriteLine($"Student:" +
+        //        $" {person.FirstName}" +
+        //        $" {person.LastName}" +
+        //        $" {person.Age}"
+        //        // +$" {person.School}"
+        //        );
+        //}
     }
 
     #region Test classes
